@@ -48,6 +48,11 @@ void loop() {
   for (int i = firstButtonPin; i <= lastButtonPin; i++) {
     bool state = checkButton(i);
     Joystick.setButton(i - firstButtonPin, state);
+    if (DEBUG && state) {
+      Serial.print("Button ");
+      Serial.print(i - firstButtonPin);
+      Serial.println(" pressed");
+    }
   }
 
 //  float base_scaled = (base_value - base_center) / (float)base_range;
