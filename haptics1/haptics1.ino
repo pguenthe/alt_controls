@@ -12,12 +12,11 @@ void setup()
 void loop()
 {
   analogWrite(hapticMotor1, outputLevel);
-  delay(300); 
-  analogWrite(hapticMotor1, 0); 
   analogWrite(hapticMotor2, outputLevel);
-  delay(300);
+  delay(500); 
+  analogWrite(hapticMotor1, 0); 
   analogWrite(hapticMotor2, 0); 
-  delay(300);
+  delay(500); 
 
   outputLevel -= increment;
   if(outputLevel < 64) {
