@@ -3,20 +3,20 @@
 
 Joystick_ Joystick;
 
-const bool DEBUG = false;
+const bool DEBUG = true;
 
 const byte firstButtonPin = 5;
 const byte lastButtonPin = 9;
 
 const byte BASE_PIN = 2;
 const byte BASE_INTERRUPT = 1; //note the order is switched on interrupts per leonardo pinout!
-const int base_range = 35; //unit 1: 35 / unit 2: 50
-const int base_center = 700; //unit 1:733  / unit 2: 728
+const int base_range = 50; //unit 1: 35 / unit 2: 50
+const int base_center = 706; //unit 1:733  / unit 2: 728
 
 const byte SEAT_PIN = 3;
 const byte SEAT_INTERRUPT = 0; //note the order is switched on interrupts per leonardo pinout!
 const int seat_range = 50;
-const int seat_center = 788; //unit 1:708  / unit 2: 660
+const int seat_center = 744; //unit 1:708  / unit 2: 660
 
 //volatile variables for interrupt changes
 volatile int base_value = base_center;
@@ -25,7 +25,7 @@ volatile int seat_value = seat_center;
 volatile int seat_prev_time = 0;
 
 const int NUM_BUTTONS = 3;
-const int buttonPins[] = {7, 8,9};
+const int buttonPins[] = {9, 8, 7};
 const int buttonMappings[] = {9, 6, 4}; //start, dash left, activate
 boolean buttonPressed[] = {false, false, false, false};
 
@@ -50,12 +50,12 @@ void loop() {
   checkButtons();
   Joystick.setYAxis(base_value);
   Joystick.setXAxis(seat_value);  
-//  
+  
   if (DEBUG) {
     Serial.print ("Base value: ");
     Serial.println (base_value);
-//    Serial.print ("Seat value: ");
-//    Serial.println(seat_value);
+    Serial.print ("Seat value: ");
+    Serial.println(seat_value);
     delay(400);
   }
   
