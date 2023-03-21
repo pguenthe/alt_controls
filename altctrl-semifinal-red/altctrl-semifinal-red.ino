@@ -70,10 +70,10 @@ void falling_seat() {
   attachInterrupt(SEAT_INTERRUPT, rising_seat, RISING);
   seat_value = micros()-seat_prev_time;
 
-//  if (DEBUG) {
-//    Serial.print("Seat on interrupt: ");
-//    Serial.println(seat_value);
-//  }
+  if (DEBUG) {
+    Serial.print("Seat on interrupt: ");
+    Serial.println(seat_value);
+  }
 }
 
 void rising_base() {
@@ -85,10 +85,10 @@ void falling_base() {
   attachInterrupt(BASE_INTERRUPT, rising_base, RISING);
   base_value = micros()-base_prev_time;
 
-//  if (DEBUG) {
-//    Serial.print("Base on interrupt: ");
-//    Serial.println(base_value);
-//  }
+  if (DEBUG) {
+    Serial.print("Base on interrupt: ");
+    Serial.println(base_value);
+  }
 }
 
 void initializeButtons() {
