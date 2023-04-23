@@ -16,7 +16,7 @@ const int base_center = 724; //unit 1:733  / unit 2: 728
 const byte SEAT_PIN = 3;
 const byte SEAT_INTERRUPT = 0; //note the order is switched on interrupts per leonardo pinout!
 const int seat_range = 60;
-const int seat_center = 700; //unit 1:708  / unit 2: 660
+const int seat_center = 685; //unit 1:708  / unit 2: 660
 
 //volatile variables for interrupt changes
 volatile int base_value = base_center;

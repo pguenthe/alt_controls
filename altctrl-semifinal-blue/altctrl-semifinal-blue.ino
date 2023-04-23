@@ -10,7 +10,7 @@ const byte lastButtonPin = 9;
 
 const byte BASE_PIN = 2;
 const byte BASE_INTERRUPT = 1; //note the order is switched on interrupts per leonardo pinout!
-const int base_range = 50; //unit 1: 35 / unit 2: 50
+const int base_range = 35; //unit 1: 35 / unit 2: 50
 const int base_center = 706; //unit 1:733  / unit 2: 728
 
 const byte SEAT_PIN = 3;
